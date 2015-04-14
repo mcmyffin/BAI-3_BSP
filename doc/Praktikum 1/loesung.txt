@@ -1,0 +1,25 @@
+b) Beantworten Sie die folgenden Fragen: 
+ 
+*Was enthalten die folgenden Umgebungsvariablen (Environment Variables)? 
+	$HOME, $PATH, $UID, $USER 
+
+	Antwort:
+		$HOME = "Variable vom Heim Arbeitsverzeichnis des Benutzers"
+		$PATH = "Variable für einen Pfad"
+		$UID  = "Variable die für die User ID steht"
+		$USER = "Variable für den Benutzer"
+
+* Was bewirkt der Befehl "cd $HOME" ? Gibt es eine einfachere Alternative? 
+	Antwort:
+		"Man landet im Arbeitsbereich des angemeldeten Benutzers"
+		"Alternative wäre 'cd ~' "
+
+* Was für eine Funktion haben die folgenden Eingaben? 
+	↑        ↓       strg‐d  (in leerer Zeile)
+	Antwort:
+		"↑ = letzten Befehl an Anzeigen"
+		"↓ = letzten Befehl anzeigen rückgängig machen"
+
+* Was ist die Funktion der .bashrc Datei im Verzeichnis $HOME? 
+	Antwort:
+		"Man kann dort sein Terminal anpassen, kofigurieren, alias setzten, Pfade exportieren etc."
