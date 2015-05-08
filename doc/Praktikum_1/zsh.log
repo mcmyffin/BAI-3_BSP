@@ -1,0 +1,445 @@
+➜  ~  alias hh="echo das ist ein ALIAS"
+➜  ~  hh
+das ist ein ALIAS
+
+➜  ~  bg
+bg: no current job
+
+➜  ~  cat Desktop/testFiles/asternchenTest.graph 
+#directed #attributed #weighted
+
+a:120,b:100::10
+a:120,c:90::25
+a:120,d:25::45
+b:100,d:25::30
+b:100,e:0::95
+c:90,d:25::10
+d:25,b:100::30
+d:25,e:0::20
+
+➜  ~  cd Desktop 
+➜  Desktop  
+➜  Desktop  cd ..
+➜  ~  mkdir testOrdner
+➜  ~  chmod 777 testOrdner 
+➜  ~  ls -l
+total 52
+drwxr-xr-x  6 dima dima 4096 Apr 27 13:31 Desktop
+drwxr-xr-x  2 dima dima 4096 Feb  2 12:49 Dokumente
+drwxr-xr-x  8 dima dima 4096 Apr 26 18:44 Downloads
+drwxr-xr-x 13 dima dima 4096 Apr  4 18:44 fahrradconfigurator
+drwxr-xr-x  2 dima dima 4096 Mär 11 21:50 fontconfig
+drwxr-xr-x  6 dima dima 4096 Feb 25 16:21 MySoftware
+drwxr-xr-x 18 dima dima 4096 Apr 25 12:03 Programme
+drwxr-xr-x 10 dima dima 4096 Mär 17 13:38 Studium
+drwxr-xr-x 11 dima dima 4096 Apr 19 16:09 test1
+drwxr-xr-x  2 dima dima 4096 Apr 27 13:17 testDir2Copy
+drwxrwxrwx  2 dima dima 4096 Apr 27 13:51 testOrdner
+drwxr-xr-x  2 dima dima 4096 Dez 18 16:51 Videos
+drwx------  3 dima dima 4096 Nov 26 19:50 VirtualBox VMs
+
+➜  ~  cp -r testOrdner test123
+➜  ~  ls
+Bildschirmfoto vom 2015-04-27 13:55:48.png  Downloads            MySoftware  test1         testOrdner
+Desktop                                     fahrradconfigurator  Programme   test123       Videos
+Dokumente  
+
+➜  ~  date
+Mo 27. Apr 13:58:12 CEST 2015
+➜  ~  dg
+zsh: command not found: dg
+➜  ~  df 
+Filesystem     1K-blocks      Used Available Use% Mounted on
+/dev/sda2       22850388  10573692  11092904  49% /
+none                   4         0         4   0% /sys/fs/cgroup
+udev             1936080         4   1936076   1% /dev
+tmpfs             390324      1412    388912   1% /run
+none                5120         0      5120   0% /run/lock
+none             1951620     12124   1939496   1% /run/shm
+none              102400        20    102380   1% /run/user
+/dev/sda1          94559     45231     44446  51% /boot
+/dev/sdb1      476641296 119797808 332608432  27% /home
+/dev/sdc1        1943232   1932960     10272 100% /media/dima/2G_SPEICHER
+➜  ~  
+➜  ~  dif Desktop/testFiles/asternchenTest.graph Desktop/testFiles/directedTest.graph 
+zsh: command not found: dif
+➜  ~  diff Desktop/testFiles/asternchenTest.graph Desktop/testFiles/directedTest.graph
+1,10c1,12
+< #directed #attributed #weighted
+< 
+< a:120,b:100::10
+< a:120,c:90::25
+< a:120,d:25::45
+< b:100,d:25::30
+< b:100,e:0::95
+< c:90,d:25::10
+< d:25,b:100::30
+< d:25,e:0::20
+---
+> #directed
+> v1,v2
+> v2,v6
+> v2,v1
+> v6,v5
+> v6,v7
+> v6,v3
+> v3,v9
+> v3,v1
+> v9,v4
+> v4,v8
+> v8,v1
+➜  ~     
+➜  ~  echo das ist auch ein String
+das ist auch ein String
+➜  ~  env
+XDG_CONFIG_DIRS=/etc/xdg/xdg-default:/etc/xdg
+LANG=de_DE.UTF-8
+DISPLAY=:0
+XDG_VTNR=8
+LOGNAME=dima
+PWD=/home/dima
+MANDATORY_PATH=/usr/share/gconf/default.mandatory.path
+GNOME_KEYRING_PID=2077
+XAUTHORITY=/home/dima/.Xauthority
+COLORTERM=gnome-terminal
+XDG_SESSION_ID=c1
+MDM_LANG=de_DE.UTF-8
+DESKTOP_SESSION=default
+MDMSESSION=default
+XDG_SESSION_DESKTOP=default
+DEFAULTS_PATH=/usr/share/gconf/default.default.path
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-lxsf3o
+TEXTDOMAINDIR=/usr/share/locale/
+WINDOWPATH=8
+USERNAME=dima
+TEXTDOMAIN=im-config
+GDMSESSION=default
+MDM_XSERVER_LOCATION=local
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-NeukpY8IM4,guid=3ba99973cdf93622bfceeb96553d2c77
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+VTE_VERSION=3409
+GDM_XSERVER_LOCATION=local
+XDG_DATA_DIRS=/usr/share/default:/usr/share/gnome:/usr/local/share/:/usr/share/:/usr/share/mdm/
+XDG_SESSION_COOKIE=4f41dbfe229cde78cac339df5492f7ff-1430072438.363360-972273460
+SHELL=/usr/bin/zsh
+WINDOWID=41949673
+SSH_AGENT_PID=2225
+SESSION_MANAGER=local/Lenovo:@/tmp/.ICE-unix/2088,unix/Lenovo:/tmp/.ICE-unix/2088
+SSH_AUTH_SOCK=/run/user/1000/keyring-lxsf3o/ssh
+XDG_CURRENT_DESKTOP=X-Cinnamon
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/dima/.rvm/bin:/home/dima/Programme/activator-1.3.2
+TERM=xterm
+HOME=/home/dima
+XDG_SEAT=seat0
+XDG_RUNTIME_DIR=/run/user/1000
+GPG_AGENT_INFO=/run/user/1000/keyring-lxsf3o/gpg:0:1
+USER=dima
+SHLVL=1
+OLDPWD=/home/dima/Desktop
+ZSH=/home/dima/.oh-my-zsh
+PAGER=less
+LESS=-R
+LC_CTYPE=de_DE.UTF-8
+LSCOLORS=Gxfxcxdxbxegedabagacad
+_=/usr/bin/env
+➜  ~  fg            
+fg: no current job
+➜  ~  
+➜  ~  find Desktop/testFiles -name undirected.graph
+➜  ~  find Desktop/testFiles -name .graph          
+➜  ~  find Desktop/testFiles -name *.*   
+➜  ~  find Desktop/testFiles          
+Desktop/testFiles
+Desktop/testFiles/directedTest.graph
+Desktop/testFiles/asternchenTest.graph
+Desktop/testFiles/bsp7.graph
+Desktop/testFiles/bsp6.graph
+Desktop/testFiles/bsp5.graph
+Desktop/testFiles/bsp8.graph
+Desktop/testFiles/bsp3.graph
+Desktop/testFiles/undirectedTest.graph
+Desktop/testFiles/bsp4.graph
+Desktop/testFiles/bsp9.graph
+Desktop/testFiles/bsp2.graph
+Desktop/testFiles/bsp1.graph
+
+
+➜  testFiles  ls | grep .graph 
+asternchenTest.graph
+bsp1.graph
+bsp2.graph
+bsp3.graph
+bsp4.graph
+bsp5.graph
+bsp6.graph
+bsp7.graph
+bsp8.graph
+bsp9.graph
+directedTest.graph
+undirectedTest.graph
+
+➜  testFiles  jobs
+➜  testFiles  kill 
+ 2077 dima     gnome-keyring-d                                                                                                        
+ 2088 dima     cinnamon-sessio                                                                                                        
+ 2225 dima     ssh-agent                                                                                                              
+ 2228 dima     dbus-launch                                                                                                            
+ 2229 dima     dbus-daemon                                                                                                            
+ 2301 dima     at-spi-bus-laun                                                                                                        
+ 2305 dima     dbus-daemon                                                                                                            
+ 2308 dima     at-spi2-registr                                                                                                        
+ 2322 dima     cinnamon-settin                                                                                                        
+ 2328 dima     pulseaudio                                                                                                             
+ 2414 dima     gvfsd                                                                                                                  
+ 2420 dima     gvfsd-fuse                                                                                                             
+ 2548 dima     gvfs-udisks2-vo                                                                                                        
+ 2561 dima     gvfs-afc-volume                                                                                                        
+ 2566 dima     gvfs-gphoto2-vo                                                                                                        
+ 2570 dima     gvfs-mtp-volume                                                                                                        
+ 2573 dima     cinnamon-launch                                                                                                        
+ 2580 dima     csd-printer                                                                                                            
+ 2590 dima     cinnamon                                                                                                               
+ 2596 dima     polkit-gnome-au                                                                                                        
+ 2598 dima     nemo                                                                                                                   
+ 2599 dima     nm-applet                                                                                                              
+ 2606 dima     dropbox                                                                                                                
+ 2612 dima     dconf-service                                                                                                          
+ 2625 dima     gconfd-2                                                                                                               
+ 2633 dima     gvfsd-trash                                                                                                            
+ 2639 dima     gvfsd-metadata                                                                                                         
+ 2763 dima     mintupdate-laun                                                                                                        
+ 2764 dima     cinnamon-screen                                                                                                        
+ 2767 dima     sh                                                                                                                     
+ 2768 dima     mintUpdate                                                                                                             
+ 2798 dima     applet.py                                                                                                              
+ 3967 dima     sublime_text                                                                                                           
+ 3980 dima     plugin_host                                                                                                            
+ 4647 dima     idea.sh                                                                                                                
+ 4694 dima     java                                                                                                                   
+ 4757 dima     fsnotifier64                                                                                                           
+ 4903 dima     gnome-terminal                                                                                                         
+ 4907 dima     gnome-pty-helpe                                                                                                        
+ 4908 dima     zsh                                                                                                                    
+ 5240 dima     zsh                                                                                                                    
+ 5241 dima     ps                                                                                                                     
+
+➜  testFiles  kill 4694 
+
+➜  testFiles  ln -s bsp1.graph ~/Desktop/aGraph
+➜  testFiles  ls
+asternchenTest.graph  bsp2.graph  bsp4.graph  bsp6.graph  bsp8.graph  directedTest.graph
+bsp1.graph            bsp3.graph  bsp5.graph  bsp7.graph  bsp9.graph  undirectedTest.graph
+
+➜  Desktop  lpq 
+Brother-DCP-7055 is ready
+
+➜  Desktop  man cp
+
+➜  Desktop  cd testFiles 
+
+➜  testFiles  more bsp1.graph 
+#directed
+a,b
+a,c
+a,h
+a,k
+b,b
+b,j
+b,k
+b,i
+c,a
+c,d
+d,a
+d,e
+d,k
+e,b
+e,c
+e,e
+e,f
+f,c
+f,g
+g,g
+g,e
+g,b
+g,d
+h,b
+h,c
+i,a
+i,c
+i,i
+j,k
+j,c
+j,a
+j,b
+k,c
+k,g
+k,d
+
+➜  testFiles  cd ..
+➜  Desktop  mv aGraph ~         
+
+➜  Desktop  ls
+activator-1.3.2  androidTestApp.apk  Antrag auf Heizkostenuebernahme.odt  play-webshop-master  Stundenplan  testFiles  Unity.desktop
+
+➜  Desktop  cd ~
+➜  ~  ls
+aGraph   Dokumente  fahrradconfigurator  MySoftware  Studium  testDir       Videos
+Desktop  Downloads  fontconfig           Programme   test1    testDir2Copy  VirtualBox VMs
+
+➜  ~  passwd 
+Changing password for dima.
+(current) UNIX password: 
+passwd: Authentication token manipulation error
+passwd: password unchanged
+
+
+➜  ~  cd Programme 
+➜  Programme  ls
+activator-1.3.2  Dropbox    idea-IU-139.224.1  netbeans-8.0.2  smartgit       VisualAutomataSimulator
+android-studio   eclipse    JAVA-Libraries     pycharm-4.0.4   SQL_Developer  Visual_Paradigm_for_UML_11.0
+DFASimulator     exorciser  JFLAP.jar          RubyMine-7.0.4  Telegram
+
+➜  Programme  ./JFLAP.jar & ./activator-1.3.2/activator 
+[1] 5399
+zsh: permission denied: ./JFLAP.jar
+[1]  + 5399 exit 126   ./JFLAP.jar
+ Did not detect an activator project in this directory.
+ - activator
+ Load an existing project (has to be executed from the project directory)
+ or print this help message if no project is found
+
+ Sub-commands
+ - activator ui
+ Open the project in the UI if executed from an existing project
+ directory, otherwise open a project-creation UI.
+
+ - activator new [project-name] [template-name]
+ Create a new project, prompting for project-name if missing and helping you
+ find a template if template-name is not provided.
+
+ - activator list-templates
+ Fetch the latest template list and print it to the console.
+
+
+➜  Programme  ps
+  PID TTY          TIME CMD
+ 4908 pts/2    00:00:02 zsh
+ 5465 pts/2    00:00:04 chromium-browse
+ 5481 pts/2    00:00:00 chrome-sandbox
+ 5482 pts/2    00:00:00 chromium-browse
+ 5486 pts/2    00:00:00 chromium-browse
+ 5509 pts/2    00:00:01 chromium-browse
+ 5518 pts/2    00:00:00 chromium-browse
+ 5523 pts/2    00:00:01 chromium-browse
+ 5533 pts/2    00:00:01 chromium-browse
+ 5546 pts/2    00:00:02 chromium-browse
+ 5558 pts/2    00:00:00 chromium-browse
+ 5562 pts/2    00:00:00 chromium-browse
+ 5600 pts/2    00:00:02 chromium-browse
+ 5649 pts/2    00:00:00 chromium-browse
+ 5704 pts/2    00:00:00 ps
+
+➜  Programme  pstree
+init─┬─ModemManager───2*[{ModemManager}]
+     ├─NetworkManager─┬─dhclient
+     │                ├─dnsmasq
+     │                └─3*[{NetworkManager}]
+     ├─acpid
+     ├─apache2───5*[apache2]
+     ├─at-spi-bus-laun─┬─dbus-daemon
+     │                 └─3*[{at-spi-bus-laun}]
+     ├─at-spi2-registr───{at-spi2-registr}
+     ├─avahi-daemon───avahi-daemon
+     ├─bluetoothd
+     ├─chromium-browse─┬─chrome-sandbox───chromium-browse───chromium-browse─┬─chromium-browse───8*[{chromium-browse}]
+     │                 │                                                    ├─3*[chromium-browse───10*[{chromium-browse}]]
+     │                 │                                                    └─3*[chromium-browse───9*[{chromium-browse}]]
+     │                 ├─chromium-browse─┬─chromium-browse
+     │                 │                 └─2*[{chromium-browse}]
+     │                 └─38*[{chromium-browse}]
+     ├─colord───2*[{colord}]
+     ├─console-kit-dae───64*[{console-kit-dae}]
+     ├─cron
+     ├─csd-printer───{csd-printer}
+     ├─cups-browsed
+     ├─cupsd
+     ├─3*[dbus-daemon]
+     ├─2*[dbus-launch]
+     ├─dconf-service───2*[{dconf-service}]
+     ├─dropbox───30*[{dropbox}]
+     ├─gconfd-2
+     ├─6*[getty]
+     ├─gnome-keyring-d───4*[{gnome-keyring-d}]
+     ├─gnome-terminal─┬─gnome-pty-helpe
+     │                ├─zsh───pstree
+     │                └─3*[{gnome-terminal}]
+     ├─gvfs-afc-volume───2*[{gvfs-afc-volume}]
+     ├─gvfs-gphoto2-vo───{gvfs-gphoto2-vo}
+     ├─gvfs-mtp-volume───{gvfs-mtp-volume}
+     ├─gvfs-udisks2-vo───2*[{gvfs-udisks2-vo}]
+     ├─gvfsd───{gvfsd}
+     ├─gvfsd-fuse───4*[{gvfsd-fuse}]
+     ├─gvfsd-metadata───{gvfsd-metadata}
+     ├─gvfsd-trash───2*[{gvfsd-trash}]
+     ├─irqbalance
+     ├─kerneloops
+     ├─mdm───mdm─┬─Xorg───2*[{Xorg}]
+     │           ├─cinnamon-sessio─┬─applet.py───{applet.py}
+     │           │                 ├─cinnamon-launch─┬─cinnamon───5*[{cinnamon}]
+     │           │                 │                 └─{cinnamon-launch}
+     │           │                 ├─cinnamon-screen───3*[{cinnamon-screen}]
+     │           │                 ├─cinnamon-settin───4*[{cinnamon-settin}]
+     │           │                 ├─mintupdate-laun───sh───mintUpdate───2*[{mintUpdate}]
+     │           │                 ├─nemo───3*[{nemo}]
+     │           │                 ├─nm-applet───2*[{nm-applet}]
+     │           │                 ├─polkit-gnome-au───{polkit-gnome-au}
+     │           │                 ├─ssh-agent
+     │           │                 └─3*[{cinnamon-sessio}]
+     │           └─{mdm}
+     ├─mysqld───16*[{mysqld}]
+     ├─nmbd
+     ├─polkitd───2*[{polkitd}]
+     ├─pulseaudio───2*[{pulseaudio}]
+     ├─rsyslogd───3*[{rsyslogd}]
+     ├─rtkit-daemon───2*[{rtkit-daemon}]
+     ├─smbd───smbd
+     ├─sublime_text─┬─plugin_host───4*[{plugin_host}]
+     │              └─6*[{sublime_text}]
+     ├─systemd-logind
+     ├─systemd-udevd
+     ├─teamviewerd───15*[{teamviewerd}]
+     ├─udisksd───4*[{udisksd}]
+     ├─upowerd───2*[{upowerd}]
+     ├─upstart-file-br
+     ├─upstart-socket-
+     ├─upstart-udev-br
+     ├─vpnagentd───2*[{vpnagentd}]
+     └─wpa_supplicant
+
+➜  Programme  pwd
+/home/dima/Programme
+
+➜  Desktop  mkdir asdasd
+➜  Desktop  rmdir asdasd 
+➜  Desktop  ls
+activator-1.3.2  androidTestApp.apk  Antrag auf Heizkostenuebernahme.odt  play-webshop-master  Stundenplan  testFiles  Unity.desktop
+
+➜  Desktop  sleep 2
+
+➜  Desktop  who
+dima     tty8         2015-04-26 20:20 (:0)
+dima     pts/2        2015-04-27 13:12 (:0)
+
+➜  Desktop  echo "Das ist ein Beispiel Text" > test.txt
+➜  Desktop  ls
+activator-1.3.2     Antrag auf Heizkostenuebernahme.odt  Stundenplan  test.txt
+androidTestApp.apk  play-webshop-master                  testFiles    Unity.desktop
+
+➜  Desktop  cat test.txt 
+Das ist ein Beispiel Text
+
+➜  Desktop  echo "das ist eine weitere Zeile" >> test.txt 
+➜  Desktop  cat test.txt
+Das ist ein Beispiel Text
+das ist eine weitere Zeile
+
