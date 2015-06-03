@@ -17,38 +17,50 @@
 // MAIN
 int main(){
 
-	char pfad[256];
-	char eingabeText[256];
+	int  maxLen = 256;
+	char pfad[maxLen];
+	char eingabeText[maxLen];
 
-	int running=1;
+	int running = 1;
 
-	getcwd(pfad,256);
-	getlogin_r(eingabeText,256);
+	// Speichert das aktuelle Verzeichnis in die Variable
+	getcwd(pfad,maxLen);
 
+	// Speichert den Usernamen in die Variable
+	getlogin_r(eingabeText,maxLen);
+
+	// Gibt den Begruessungstext aus
 	printf("%s: MoinMoin %s\n",pfad,eingabeText);
 
 	while(running){
 
+		// Gibt das aktuelle Verzeichnis aus
 		printf("%s: ",pfad);
-		scanf("%s", eingabeText);
 
+		scanf("%255s", eingabeText);
+
+		// Wenn quit , dann beenden
 		if (strcmp(eingabeText,"quit")==0){
 
 			printf("Das Programm wird beendet.\n"); 
 			running=0;
 
+		// Wenn version, dann zeige Version
 		} else if (strcmp(eingabeText,"version")==0){
 
 			printf("HAW-Shell Version 1.0 Autor: Dimitri-Meier\n");      
 
+		// Wenn erstes Char '/', dann oeffne Verzeichnis
 		} else if ('/'==eingabeText[0]){
 
-			if (opendir(eingabeText)== 0){
+			// Wenn Pfad ungueltig, dann informiere User
+			if (chdir(eingabeText)== -1){
 				
 				printf("Sorry nicht gefunden\n");
 
 			}else {
-
+				
+				// Wenn im Pfad am ende ein '/' vorkommt, dann entferne diesen
 				if ('/' == eingabeText[strlen(eingabeText)-1]){
 				
 					eingabeText[strlen(eingabeText)-1] = 0;
@@ -58,32 +70,37 @@ int main(){
 					
 					strcpy(pfad,eingabeText);
 				}
+				// Pfad wechseln
 				chdir(pfad);
 			}
 
-
-
-
+		// Wenn help, dann zeige die Bedienungsanleitung
 		} else if (strcmp(eingabeText,"help")==0){
 		
 			printf("== HELP ==\n\nhelp        : Zeigt dir diese Informationen an\nquit        : Beendet das Programm\nversion     : Zeigt dir die aktuelle Version und die Autoren\n/[Pfadname] : Wechselt das Arbeitsverzeichnis nach /[Pfadname]\n");
 
+		// Wenn kein Kindprozess
 		} else if (fork()!=0){
 
+			// Wenn in der Eingabe kein '&' vorkommt, dann warte.
 			if (eingabeText[(strlen(eingabeText)-1)]!='&')
-			wait();
+				wait();
 
+		// Kindprozess
 		} else {
-			
+			// Wenn in der Eingabe ein '&' vorkommt
 			if (eingabeText[(strlen(eingabeText)-1)]=='&'){
 			
+				// eleminiere das '&'
 				eingabeText[strlen(eingabeText)-1]=0;
+				// zeige das aktuelle Verzeichnis
 				printf("%s: ",pfad);
 			}
-
+			
 			execlp(eingabeText,"",NULL);
-			exit(1);
+			printf("ungueltige Eingabe\n");
+			exit(0);
 		}
 	}
-	return 1;
+	return 0;
 }
