@@ -1,15 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <string.h>
+
+
 
 int main () {
 
 	printf("Geben Sie den Namen der neuen Datei an:\n");
 
     // ertelle ein String mit 30 Länge + (1 '\0' Terminierung)
-    char input[31];
+	int inputlen = 31;    
+	char input[inputlen];
 
     // Eingabeaufforderung
-    fgets( input, 31, stdin);
+    fgets( input, inputlen, stdin);
 
     // entfernen von Leerzeichen und \n
     int i,j;
@@ -25,20 +33,18 @@ int main () {
 
 
     // ertelle File mit Mode 0700
-    int file = creat(output, 0700);
-
-    // schließe das erstellte File
-    close();
-
-    // true == (int i: i > 0 oder i < 0)
-    // false == (int i: i == 0)
+    mode_t mode = S_IRWXU;
+    int file = creat(output, mode);
 
     if(file){
+        // schließe das erstellte File
+        close(file);
         printf("Das File %s wurde erfolgreich erstellt\n",output);
+    
+    }else{
+    	printf("Das File %s konnte nicht erstellt werden\n",output);
+        return 1;
     }
-	else{
-	    printf("Das File %s konnte nicht erstellt werden\n",output);
-	}
 
     // program exit
 	return 0;

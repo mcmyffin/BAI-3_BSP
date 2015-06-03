@@ -43,13 +43,13 @@ if [ $# -eq 1 ]; then
     case $1 in
         "-h")
             usage
-            exit 1
+            exit 0
             ;;
         *)
             interval=10
             host=$1
             do_ping
-            exit 1
+            exit 0
     esac
 elif [ $# -eq 3 ]; then
     case $2 in
@@ -62,7 +62,7 @@ elif [ $# -eq 3 ]; then
             interval=$2
             host=$3
             do_ping
-            exit 1
+            exit 0
     esac
 else
     usage

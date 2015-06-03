@@ -18,8 +18,8 @@ OPTIONS:
 # This function rename all *.txt files
 do_rename() {
 
-#	for file in $(find  -maxdepth 1 -type f);
-	for file in $(ls | grep -a *.txt)
+
+	for file in $(ls | grep -a .txt)
 	do
 		echo $file
 		echo "rename to $file$string"
@@ -30,7 +30,7 @@ do_rename() {
 
 # Read String that will be used to rename
 get_string() {
-    echo "Please enter your <String> wich will be append to the *txt Files"
+    echo "Please enter your <String> which will be append to the *txt Files"
     read string
 }
 # ---------------------- main --------------------------------
