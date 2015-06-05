@@ -1,6 +1,6 @@
+package mk;
 
-import Simulation.SimulationsManager;
-
+import mk.Simulation.SimulationsManager;
 
 /**
  *
@@ -10,7 +10,7 @@ public class StartUp {
         
     public static void main(String[] args) {
         
-        Simulation.SimulationsManager simulation = new SimulationsManager(5,3,3000);
+        mk.Simulation.SimulationsManager simulation = new SimulationsManager(5,3,3000);
         simulation.start();
         
     }

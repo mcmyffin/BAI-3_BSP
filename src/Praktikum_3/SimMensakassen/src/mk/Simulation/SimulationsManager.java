@@ -1,11 +1,9 @@
-package Simulation;
+package mk.Simulation;
 
-import Erzeuger.Student;
-import Verraucher.Kasse;
+import mk.Erzeuger.Student;
+import mk.Verraucher.Kasse;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,16 +25,19 @@ public class SimulationsManager extends Thread{
     
     public void run(){
         
-        Mensa mensa = new Mensa();
-        List<Kasse> kassenListe = mensa.init(kassenAnzahl);
+        Mensa mensa = new Mensa(kassenAnzahl);
         List<Student> studenten = new LinkedList();
         
-        
+        for(Kasse eineKasse : mensa.getVerfuegbareKassen()){
+            eineKasse.start();
+            System.err.println("Kasse "+eineKasse+" hat geöffnet");
+        }
         
         for(int i = 0; i < studentenAnzahl; i++){
-            Student student = new Student(i, kassenListe);
+            Student student = new Student(i, mensa.getVerfuegbareKassen());
             studenten.add(student);
             student.gehEssen();
+            System.err.println("Student "+student+" geht zur Mensa");
         }
         
         
@@ -44,21 +45,23 @@ public class SimulationsManager extends Thread{
             
             try {
                 sleep(simDauerInMillSec);
-                
-                for(Student einStudent : studenten){
-                    einStudent.interrupt();
-                }
-                
-                for(Kasse eineKasse : kassenListe){
-                    eineKasse.interrupt();
-                }
+                this.interrupt();
                 
             } catch (InterruptedException ex) {
-                
+                this.interrupt();
             }
             
             System.err.println("=== Simulation beendet ===");
-            this.interrupt();
+            
+        }
+        // Studenten Threads stoppen
+        for(Student einStudent : studenten){
+                    einStudent.interrupt();
+        }
+        
+        // Kassen Threads stoppen
+        for(Kasse eineKasse : mensa.getVerfuegbareKassen()){
+                    eineKasse.interrupt();
         }
         
         

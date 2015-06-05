@@ -27,3 +27,6 @@ nb-configuration.xml
 .nb-gradle/
 build.xml
 manifest.mf
+src/Praktikum_3/SimMensakassen/nbproject/
+src/Praktikum_3/SchereSteinPapierSim/nbproject/
+src/Praktikum_3/SchereSteinPapierSim_v2/nbproject/

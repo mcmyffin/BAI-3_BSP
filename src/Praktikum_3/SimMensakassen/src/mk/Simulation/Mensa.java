@@ -1,10 +1,8 @@
-package Simulation;
+package mk.Simulation;
 
-import Verraucher.Kasse;
+import mk.Verraucher.Kasse;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -14,21 +12,23 @@ public class Mensa {
     
     private List<Kasse> kassen;
     
-    public Mensa(){
-        
+    public Mensa(int kassenAnzahl){
         kassen = new LinkedList();
+        init(kassenAnzahl);
     }
     
-    public List<Kasse> init(int kassenAnzahl){
+    private void init(int kassenAnzahl){
         
         for(int i = 0; i < kassenAnzahl; i++){
             
             Kasse kasse = new Kasse(i);
-            System.err.println("Kasse "+i+" hat geöffnet");
-            kasse.start();
+            System.err.println("Kasse "+i+" wurde erstellt");
             kassen.add(kasse);
         }
-        return kassen;
+    }
+    
+    public List<Kasse> getVerfuegbareKassen(){
+        return this.kassen;
     }
     
 }
